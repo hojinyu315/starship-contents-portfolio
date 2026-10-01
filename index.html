@@ -39,8 +39,6 @@
 
       /* 스크롤 진행에 따라 JS가 갱신: 퍼플 → 핑크 → 흰색 (벙커키즈 히어로 그라데이션) */
       --scroll-bg: #FFFFFF;
-      --navy: #0E1152;
-      --navy-deep: #080A38;
       --dyn-fg: #111111;
       --dyn-fg-dim: rgba(17,17,17,0.62);
       --dyn-line: rgba(17,17,17,0.14);
@@ -1045,7 +1043,7 @@
     /* ── MOTION LAYER ── */
     :root { --pointer-x: 50%; --pointer-y: 50%; }
     .page-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 300; pointer-events: none; }
-    .page-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--accent), var(--pink)); transition: width 0.08s linear; }
+    .page-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--accent), #FFD37A); transition: width 0.08s linear; }
     .hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255,255,255,0.16), transparent 25%); transition: opacity 0.4s ease; }
     .hero.is-pointer-active::after { opacity: 1; }
     .hero-inner { transform: translate3d(calc(var(--hero-x, 0) * 1px), calc(var(--hero-y, 0) * 1px), 0); transition: transform 0.18s ease-out; will-change: transform; }
@@ -1064,8 +1062,6 @@
     .philosophy-card { position: relative; overflow: hidden; }
     .philosophy-card::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
     .philosophy-card:hover::after { transform: scaleX(1); }
-    .philosophy-card:nth-child(2)::after { background: #FFC629; }
-    .philosophy-card:nth-child(3)::after { background: #29B6F6; }
     .timeline::after { content: ''; position: absolute; left: 80px; top: 6px; width: 1px; height: var(--timeline-progress, 0%); background: var(--accent); opacity: 1; transition: height 0.2s ease; pointer-events: none; }
     .timeline-dot { transition: transform 0.3s ease, background 0.3s ease; }
     .timeline-item.is-past .timeline-dot { transform: translateX(-50%) scale(1.7); background: var(--accent); }
@@ -1296,7 +1292,7 @@ nav ul a:is(:hover, :focus-visible, .active)::after { transform: scaleX(1); }
 .section-title, .sec-dark .section-title { position: relative; border-bottom-color: transparent; }
 .section-title::after {
   content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
-  background: linear-gradient(90deg, #F5327F, #FFC629 55%, #29B6F6);
+  background: linear-gradient(90deg, #FEA202 0%, #FEA202 42%, rgba(254,162,2,0.22) 100%);
   transform-origin: left; transform: scaleX(1);
 }
 html.brand-motion .brand-reveal {
