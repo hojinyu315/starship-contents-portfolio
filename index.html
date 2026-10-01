@@ -23,11 +23,11 @@
       --gray-light: #f6f6f6;
       --border: #e0e0e0;
       --white: #fff;
-      --accent: #F5327F;
-      --accent-dark: #D31E67;
-      --accent-soft: #FFE9F2;
-      --pink: #FFC629;
-      --grad: linear-gradient(135deg, #F5327F 0%, #FFC629 100%);
+      --accent: #FEA202;
+      --accent-dark: #D6870A;
+      --accent-soft: #FFF3DC;
+      --pink: #FFC94D;
+      --grad: linear-gradient(135deg, #FEA202 0%, #FFC94D 100%);
       --dark-bg: #111111;
       --nav-bg: #111111;
       --card-bg: #1C1C1C;
@@ -38,19 +38,19 @@
       --radius-md: 16px;
 
       /* 스크롤 진행에 따라 JS가 갱신: 퍼플 → 핑크 → 흰색 (벙커키즈 히어로 그라데이션) */
-      --scroll-bg: #0E1152;
+      --scroll-bg: #FFFFFF;
       --navy: #0E1152;
       --navy-deep: #080A38;
-      --dyn-fg: #FFFFFF;
-      --dyn-fg-dim: rgba(255,255,255,0.72);
-      --dyn-line: rgba(255,255,255,0.12);
+      --dyn-fg: #111111;
+      --dyn-fg-dim: rgba(17,17,17,0.62);
+      --dyn-line: rgba(17,17,17,0.14);
     }
 
     /* 스크롤 배경 레이어 (hero~metrics 구간) */
     #scroll-bg {
       position: fixed;
       inset: 0;
-      background: linear-gradient(180deg, #161A6B 0%, #0E1152 52%, #080A38 100%);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 58%, #FFF7EA 100%);
       overflow: hidden;
       z-index: -1;
       pointer-events: none;
@@ -61,7 +61,7 @@
       width: 120%;
       height: 120%;
       display: block;
-      opacity: 0.11;
+      opacity: 0.16;
       filter: blur(4px);
     }
     .blossom-spin {
@@ -119,7 +119,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.85);
       -webkit-backdrop-filter: saturate(160%) blur(14px);
       backdrop-filter: saturate(160%) blur(14px);
       transition: background 0.35s ease;
@@ -228,8 +228,8 @@
         to bottom,
         transparent,
         transparent calc(52px - 1px),
-        rgba(255,255,255,0.045) calc(52px - 1px),
-        rgba(255,255,255,0.045) 52px
+        rgba(17,17,17,0.05) calc(52px - 1px),
+        rgba(17,17,17,0.05) 52px
       );
       pointer-events: none;
     }
@@ -253,8 +253,8 @@
       display: flex;
       align-items: center;
       gap: 26px;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: #F7F7F7;
+      border: 1px solid #E8E8E8;
       backdrop-filter: blur(10px);
       border-radius: 24px;
       padding: 16px 34px 16px 16px;
@@ -275,7 +275,7 @@
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
       font-size: 36px;
       font-weight: 700;
-      color: var(--white);
+      color: var(--dark);
       letter-spacing: -0.02em;
       line-height: 1.2;
     }
@@ -285,7 +285,7 @@
       font-size: 11.5px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: #8A8A8A;
       margin-top: 10px;
       line-height: 1.8;
     }
@@ -403,7 +403,7 @@
       transition: color 0.35s ease, background 0.35s ease, border-color 0.35s ease;
       position: relative; top: -1px;
     }
-    html.fg-dark .hero-pill { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+    html.fg-dark .hero-pill { background: var(--accent); border-color: transparent; color: #1A1A1A; }
 
     .hero-brand-name {
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
@@ -1056,7 +1056,7 @@
     .hero-checks li { transition: transform 0.2s ease, color 0.2s ease; }
     .hero-checks li:hover { transform: translateX(8px); color: var(--dyn-fg); }
     .metric-item { position: relative; overflow: hidden; }
-    .metric-item::after { content: ''; position: absolute; top: 0; left: -100%; width: 70%; height: 1px; background: rgba(255,255,255,0.7); transition: left 0.7s ease; }
+    .metric-item::after { content: ''; position: absolute; top: 0; left: -100%; width: 70%; height: 1px; background: rgba(17,17,17,0.35); transition: left 0.7s ease; }
     .metric-item:hover::after { left: 100%; }
     .metric-num { white-space: nowrap; transition: letter-spacing 0.25s ease, transform 0.25s ease; }
     .metric-item:hover .metric-num { letter-spacing: 1.5px; transform: translateX(3px); }
@@ -1226,7 +1226,7 @@
     .hero-title { color: var(--dyn-fg); }
     .hero-checks li { color: var(--dyn-fg-dim); }
     .hero-checks li strong { color: var(--dyn-fg); }
-    .hero-checks li::before { color: #FFFFFF; }
+    .hero-checks li::before { color: var(--accent); }
     .hero-divider { background: #FFFFFF; }
     html.fg-dark .hero-checks li::before { color: var(--accent); }
     html.fg-dark .hero-divider { background: var(--accent); }
@@ -1239,7 +1239,7 @@
 
     /* ── About 이후: 밝은 무드 (흰 배경 + 하늘색 포인트) ── */
     .sec-dark {
-      background: #FFF6FA;
+      background: #FFFBF2;
       border-bottom: 1px solid var(--border);
       --white: #111111;
       --on-dark: #555555;
@@ -1470,9 +1470,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   <svg class="cj-blossom" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
     <g class="blossom-spin">
       <g transform="translate(500 500)">
-        <path fill="#29B6F6" transform="rotate(0) translate(0 -250)"   d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
-        <path fill="#FFC629" transform="rotate(120) translate(0 -250)" d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
-        <path fill="#F5327F" transform="rotate(240) translate(0 -250)" d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
+        <path fill="#FEA202" transform="rotate(0) translate(0 -250)"   d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
+        <path fill="#FFC94D" transform="rotate(120) translate(0 -250)" d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
+        <path fill="#FFE2A8" transform="rotate(240) translate(0 -250)" d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
       </g>
     </g>
   </svg>
@@ -1521,7 +1521,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </div>
     <div class="hero-text">
       <div class="hero-brand">
-        <img class="hero-logo" src="starship_ci_white.png" alt="스타쉽엔터테인먼트">
+        <img class="hero-logo" src="starship_ci.png" alt="스타쉽엔터테인먼트">
         <span class="hero-pill">아티스트 콘텐츠 담당 지원</span>
       </div>
       <h1 class="hero-title">기획부터 제작과 운영까지,<br>다음 콘텐츠를 기다리게 만듭니다.</h1>
@@ -2302,7 +2302,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     /* 기준 = 사이드바 세 번째(노션) 아이콘 아래쪽이 흰 구간 상단선에 닿는 순간 */
     var boundary = target.getBoundingClientRect().top;
     var iconBottom = ytIcon ? ytIcon.getBoundingClientRect().bottom : window.innerHeight * 0.5;
-    root.classList.toggle('fg-dark', boundary <= iconBottom);
+    root.classList.add('fg-dark');   // 배경이 항상 흰색이므로 어두운 글자 고정
   }
 
   function onScroll() {
@@ -2477,7 +2477,7 @@ if (ctaSection) {
 }
 
 /* ── 지표 카운트업 (보이면 실행, 완전히 사라지면 리셋) ── */
-const metricTargets = ['6.3만 → 12만', '+8.8%', '100편+'];
+const metricTargets = ['435만', 'CTR 6.0%', '100편+'];
 const metricItems = document.querySelectorAll('.metric-item');
 let metricsAnimated = false;
 let metricRafIds = [];
@@ -2500,8 +2500,8 @@ function animateMetrics() {
     const draw = now => {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      if (index === 0) el.textContent = `${(6.3 * eased).toFixed(1)}만 → ${(12 * eased).toFixed(0)}만`;
-      if (index === 1) el.textContent = `+${(8.8 * eased).toFixed(1)}%`;
+      if (index === 0) el.textContent = `${(435 * eased).toFixed(0)}만`;
+      if (index === 1) el.textContent = `CTR ${(6.0 * eased).toFixed(1)}%`;
       if (index === 2) el.textContent = `${Math.round(100 * eased)}편+`;
       if (t < 1) metricRafIds.push(requestAnimationFrame(draw)); else el.textContent = target;
     };
